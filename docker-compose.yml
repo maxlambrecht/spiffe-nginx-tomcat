@@ -1,0 +1,22 @@
+version: '3'
+services:
+  spire-server:
+    build: ./spire
+    image: spire
+    hostname: spire-server
+    tty: true
+  backend:
+    build: ./back-end
+    hostname: back-end
+    tty: true
+    links:
+      - spire-server
+  frontend:
+    build: ./front-end
+    tty: true
+    links:
+      - spire-server
+      - backend
+    ports:
+      - 4001:4001
+

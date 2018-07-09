@@ -1,0 +1,37 @@
+defscrollback 10000
+
+screen -t spire-server bash -c "./connect.sh spire-server '/bin/bash'"
+screen -t spire-server bash -c "./connect.sh spire-server '/bin/bash'"
+
+screen -t spire-agent-1 bash -c "./connect.sh backend '/bin/bash'"
+screen -t spire-agent-2 bash -c "./connect.sh frontend '/bin/bash'"
+
+screen -t back-end bash -c "./connect.sh backend 'cd /opt/back-end do&& /bin/bash'"
+screen -t front-end bash -c "./connect.sh frontend 'cd /opt/front-end && /bin/bash'"
+
+mousetrack on
+rendition so wb
+caption string "%n %t"
+
+split -v
+focus right
+split
+focus down
+split
+focus left
+split
+focus up
+split
+focus up
+
+select 0
+focus right
+select 1
+focus down
+select 3
+focus down
+select 5
+focus left
+select 4
+focus up
+select 2

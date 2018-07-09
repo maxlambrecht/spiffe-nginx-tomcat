@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tasks</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}" src="js/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Tasks</h1>
+
+    <p>
+        <a href="/tasksEdit" th:href="@{/tasks/edit}">Create</a>
+    </p>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tasks : ${tasks}">
+            <td th:text="${tasks.id}">1</td>
+            <td th:text="${tasks.title}">Test</td>
+            <td>
+                <a href="/tasksEdit/1" th:href="@{/tasks/edit/__${tasks.id}__}">Edit</a>
+                <a href="/tasksDelete/1" th:href="@{/tasks/delete/__${tasks.id}__}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+buildscript {
+    ext.springBootVersion = "2.0.2.RELEASE"
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+allprojects {
+    group = 'spiffe'
+    version = "0.1-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+    }
+}
+

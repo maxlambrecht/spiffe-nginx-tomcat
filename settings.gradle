@@ -1,0 +1,5 @@
+rootProject.name = 'spiffe-nginx-tomcat'
+
+include 'back-end'
+include 'front-end'
+
