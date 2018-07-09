@@ -5,9 +5,11 @@ fetches and validates the X509-SVIDs.
 
 The current example consists of the following modules:
 
-_**back-end**_: simple Spring boot application with a RestController that handles GET requests. 
+_**back-end**_: simple Spring boot application with a RestController that handles GET requests. It's packaged in a WAR file 
+and run on a standalone Tomcat.
 
-_**front-end**_: simple Web-app that fetch data from the back-end.
+_**front-end**_: simple Web-app that fetch data from the back-end. It's packaged in a WAR file and
+run in standalone Tomcat.
 
 _**[spiffe nginx](https://github.com/spiffe/spiffe-nginx)**_: a version of NGINX Open Source interacts with the SPIFFE Workload API to request and use certificates for mTLS.
                     
