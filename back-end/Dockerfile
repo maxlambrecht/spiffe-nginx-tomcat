@@ -1,7 +1,5 @@
 FROM spire
 
-ARG SPIFFE_HELPER_DIR=/opt/spiffe-helper
-
 RUN mkdir /opt/back-end
 COPY run-backend.sh /opt/back-end
 RUN chmod +x /opt/back-end/run-backend.sh
